@@ -1,0 +1,16 @@
+[package]
+name = "pdf-oxide-wasi"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pdf-oxide-wasi"
+path = "src/main.rs"
+
+[dependencies]
+pdf_oxide = "0.3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
