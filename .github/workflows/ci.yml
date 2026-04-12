@@ -13,11 +13,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Test & Lint
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@v4.6.0
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v1.0.7
         with:
           toolchain: stable
           profile: minimal
@@ -40,11 +42,13 @@ jobs:
   security:
     runs-on: ubuntu-latest
     name: Security Audit
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@v4.6.0
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
+        uses: actions-rs/toolchain@v1.0.7
         with:
           toolchain: stable
           profile: minimal
